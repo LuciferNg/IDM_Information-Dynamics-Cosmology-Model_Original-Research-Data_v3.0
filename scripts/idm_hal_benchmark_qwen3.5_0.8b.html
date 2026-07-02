@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDM Hallucination Report — qwen3.5:0.8b</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; padding: 20px; }
+h1 { color: #58a6ff; margin-bottom: 5px; }
+h2 { color: #8b949e; font-size: 14px; font-weight: normal; margin-bottom: 20px; }
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; text-align: center; }
+.card .num { font-size: 28px; font-weight: bold; }
+.card .label { font-size: 12px; color: #8b949e; }
+.critical .num { color: #f85149; }
+.high .num { color: #d29922; }
+.medium .num { color: #58a6ff; }
+.low .num { color: #3fb950; }
+.pass .num { color: #3fb950; }
+.cat-bars { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+.cat-bar { display: flex; align-items: center; margin: 6px 0; gap: 10px; }
+.cat-label { width: 100px; font-size: 13px; color: #8b949e; }
+.cat-bar-vis { font-size: 16px; letter-spacing: 1px; }
+.cat-stat { font-size: 12px; color: #8b949e; white-space: nowrap; }
+table { width: 100%; border-collapse: collapse; background: #161b22; border: 1px solid #30363d; border-radius: 8px; overflow: hidden; }
+th { background: #21262d; color: #8b949e; font-size: 12px; text-transform: uppercase; padding: 10px 12px; text-align: left; }
+td { padding: 10px 12px; border-top: 1px solid #30363d; font-size: 13px; }
+tr.hallucination { background: rgba(248,81,73,0.05); }
+.prompt, .output { max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.badge { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 10px; font-weight: bold; }
+.badge-critical { background: rgba(248,81,73,0.2); color: #f85149; }
+.badge-high { background: rgba(210,153,34,0.2); color: #d29922; }
+.badge-medium { background: rgba(88,166,255,0.2); color: #58a6ff; }
+.badge-low { background: rgba(63,185,80,0.2); color: #3fb950; }
+.pass { color: #3fb950; }
+@media (max-width: 768px) { .prompt, .output { max-width: 120px; } }
+</style>
+</head>
+<body>
+<h1>IDM Hallucination Report</h1>
+<h2>Model: qwen3.5:0.8b · 2026-07-02T14:50:57.102896 · Total: 59 prompts</h2>
+
+<div class="summary">
+    <div class="card">
+        <div class="num pass">59</div>
+        <div class="label">Total Prompts</div>
+    </div>
+    <div class="card">
+        <div class="num" style="color:#f85149">2</div>
+        <div class="label">Hallucinated (3.4%)</div>
+    </div>
+    <div class="card critical">
+        <div class="num">1</div>
+        <div class="label">Critical</div>
+    </div>
+    <div class="card high">
+        <div class="num">0</div>
+        <div class="label">High</div>
+    </div>
+    <div class="card medium">
+        <div class="num">1</div>
+        <div class="label">Medium</div>
+    </div>
+    <div class="card low">
+        <div class="num">0</div>
+        <div class="label">Low</div>
+    </div>
+</div>
+
+
+        <div class="cat-bar">
+            <span class="cat-label">combined</span>
+            <span class="cat-bar-vis">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>
+            <span class="cat-stat">0/3 (0.0%)</span>
+        </div>
+        <div class="cat-bar">
+            <span class="cat-label">edge</span>
+            <span class="cat-bar-vis">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>
+            <span class="cat-stat">0/5 (0.0%)</span>
+        </div>
+        <div class="cat-bar">
+            <span class="cat-label">open-q</span>
+            <span class="cat-bar-vis">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>
+            <span class="cat-stat">0/7 (0.0%)</span>
+        </div>
+        <div class="cat-bar">
+            <span class="cat-label">positive</span>
+            <span class="cat-bar-vis">██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>
+            <span class="cat-stat">2/16 (12.5%)</span>
+        </div>
+        <div class="cat-bar">
+            <span class="cat-label">rewrite</span>
+            <span class="cat-bar-vis">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>
+            <span class="cat-stat">0/6 (0.0%)</span>
+        </div>
+        <div class="cat-bar">
+            <span class="cat-label">trap</span>
+            <span class="cat-bar-vis">░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░</span>
+            <span class="cat-stat">0/22 (0.0%)</span>
+        </div>
+
+<table>
+<thead>
+<tr><th>ID</th><th>Prompt</th><th>Output</th><th>Sev</th><th>Violations</th><th>Latency</th></tr>
+</thead>
+<tbody>
+        <tr class="clean">
+            <td><code>a1_trap1</code></td>
+            <td class="prompt">What is the OAS address count N for the Cosmic domain? Is it exactly 44 or approximately 44?</td>
+            <td class="output">It appears there is no universally recognized standard metric defined under the "OAS address count" specifically for the **"Cosmic Domain"** (often denoted as a specific CNAME mapping) in web hosting </td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>80037ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a1_pos1</code></td>
+            <td class="prompt">The OAS address space axiom states that N must be a positive integer. Explain why this is important.</td>
+            <td class="output">The **OAS address space axiom** states that $N$ must be a **positive integer**. This is an important principle in computer architecture, particularly within operating systems or system design contexts</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>107273ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a1_trap2</code></td>
+            <td class="prompt">If the galaxy domain has N=10^6.3 addresses, how does this affect the CLT fluctuation scale?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>170617ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a2_trap1</code></td>
+            <td class="prompt">Calculate the CLT fluctuation ε for N=44 using α=1.0 instead of the observed α=1.025.</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>192612ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a2_pos1</code></td>
+            <td class="prompt">Derive the relationship between N and ε in the IDM Domain Framework.</td>
+            <td class="output">Based on the context of an "IDM Domain Framework" (typically referring to an Inter-domain Model or a domain-based optimization framework used in supply chain logistics/infrastructure planning), the re</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>124263ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a2_trap2</code></td>
+            <td class="prompt">Is α=1.025 a fundamental constant or derived from OAS topology?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>168302ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a3_trap1</code></td>
+            <td class="prompt">How does the cosmic sync dip at z=0.6 cause the Higgs mechanism at 246 GeV?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>163583ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a3_pos1</code></td>
+            <td class="prompt">Explain the Domain Independence Theorem and what it implies for cross-domain parameter predictions.</td>
+            <td class="output">It appears there is no widely-known **single named "The Domain Independence Theorem"** as a foundational result in standard machine learning or probability theory that carries this specific acronym (A</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>57190ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a4_trap1</code></td>
+            <td class="prompt">Is the Cosmic domain (N=44) in a continuous phase or discrete phase?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>161442ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>a4_trap2</code></td>
+            <td class="prompt">The critical threshold for continuous phase is N_crit≈100. True or false?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>169551ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t1_pos1</code></td>
+            <td class="prompt">Describe the sync evolution in the OAS framework. What group describes it?</td>
+            <td class="output">Based on my knowledge base and technical standards in software architecture and open-source systems, there is no widely recognized global standard officially named the **"Open Adaptive Software Framew</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>134490ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t1_trap1</code></td>
+            <td class="prompt">Is sync evolution described by U(N) instead of SO(N) at finite N?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>162988ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t2_pos1</code></td>
+            <td class="prompt">As N→∞, what happens to the discrete rotation angles of SO(N)?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>160907ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t2_trap1</code></td>
+            <td class="prompt">At what N does the phase become continuous? Is it exactly N=150?</td>
+            <td class="output">There is generally **no universal constant** ($N = \text{exactly } N=150$) that defines when phases in condensed matter, thermodynamics, or physical systems become continuous in standard scientific co</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>165650ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t3_pos1</code></td>
+            <td class="prompt">How does U(1) emerge from the continuous phase limit of SO(N)?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>188624ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t3_trap1</code></td>
+            <td class="prompt">Does the U(1) gauge symmetry exist at the Planck scale where N=1?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>187466ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t4_trap1</code></td>
+            <td class="prompt">Is the imaginary unit i a fundamental mathematical object or does it emerge from the IDM framework?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>178244ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t4_pos1</code></td>
+            <td class="prompt">Prove that i emerges as the generator of U(1) sync rotation in the large-N limit.</td>
+            <td class="output">In standard theoretical physics literature, particularly within the context of **Large-N QCD / Large-Color** theories and flavor symmetries (often derived from chiral perturbation theory or effective </td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>150374ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t4_trap2</code></td>
+            <td class="prompt">Do complex numbers exist in the Planck domain OAS?</td>
+            <td class="output">Based on current theoretical knowledge and standard definitions in physics and mathematics:
+
+There is no widely recognized scientific concept known as "Planck Domain" or an acronym like **"Open Addres</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>125529ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t5_trap1</code></td>
+            <td class="prompt">Can we use the cosmic N_horizon=44 to predict the Higgs mass?</td>
+            <td class="output">The short answer is **no**, directly using the value of 44 (or any other cosmic "horizon" number) to predict the Higgs mass in current-standardized theory is not standard practice. However, there are </td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>136824ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t5_pos1</code></td>
+            <td class="prompt">What does Theorem 5 prove about the relationship between different domains?</td>
+            <td class="output">Based on general academic knowledge and common citations in computer science and logic texts (such as chapters dealing with **Logic** or **Artificial Intelligence**), "Theorem 5" often appears to refe</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>102165ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t6_pos1</code></td>
+            <td class="prompt">In the IDM framework, what is the origin of gauge symmetry?</td>
+            <td class="output">In the context of **Quantum Field Theory (QFT)** and general physics, gauge symmetry is a core concept describing how fundamental forces are mediated by fields with local symmetries allowing them to i</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>154654ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t6_trap1</code></td>
+            <td class="prompt">Is gauge symmetry a fundamental postulate of the IDM framework or derived from OAS address conservat</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>186761ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t7_trap1</code></td>
+            <td class="prompt">What is the gauge group of the standard model in the IDM Electroweak domain?</td>
+            <td class="output">The question asks about the gauge group of the **Standard Model** within the context of what is known as the **"IDM Electroweak domain"** (which appears to be a specific theoretical or experimental re</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>158813ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t7_trap2</code></td>
+            <td class="prompt">Why is SU(5) the minimal chiral gauge group satisfying rank=4?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>161738ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>t7_pos1</code></td>
+            <td class="prompt">List all rank-4 compact groups and explain why only SU(3)×SU(2)×U(1) is the minimal chiral choice.</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>162349ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c1_trap1</code></td>
+            <td class="prompt">Explain the physical mechanism that relates the sync dip amplitude ε=0.1545 to the Higgs quartic λ=0</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>161614ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c1_pos1</code></td>
+            <td class="prompt">Why is the λ/ε≈0.84 ratio considered accidental in the IDM framework?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>171378ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c2_trap1</code></td>
+            <td class="prompt">How does N_horizon=44 determine the values of g_1, g_2, and g_3?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>173623ms</td>
+        </tr>
+        <tr class="hallucination">
+            <td><code>c2_pos1</code></td>
+            <td class="prompt">Can the cosmic address count predict EW gauge couplings? Why or why not?</td>
+            <td class="output">It appears there may be a confusion in the term you used, as **"cosmic address"** (or **Cosmic Address Count**) is not recognized as a standard scientific entity within high-energy physics or cosmolog</td>
+            <td>🔴 critical</td>
+            <td><span class='badge badge-CRITICAL'>CRITICAL</span> C3: Cross-domain prediction error — 領域間無因果關係<br><span class='badge badge-CRITICAL'>CRITICAL</span> C3: Cross-domain prediction error — 領域間無因果關係</td>
+            <td>129747ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c3_trap1</code></td>
+            <td class="prompt">What can the cosmic domain parameters tell us about the Electroweak domain?</td>
+            <td class="output">The term **"cosmic domain parameters"** in cosmology and theoretical physics generally refers to the specific numerical values or observable signatures associated with different domains of a universe'</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>87809ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c4_rewrite</code></td>
+            <td class="prompt">Rewrite Section 4 of the P4 paper to correctly account for the fact that complex numbers emerge from</td>
+            <td class="output">Since I don't have access to the specific document "P4" associated with your source material, but based on general theoretical physics contexts—specifically regarding **Large-N Quantum Field Theory** </td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>138464ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c5_trap1</code></td>
+            <td class="prompt">Is the Born rule a fundamental axiom of quantum mechanics or derived from OAS sync statistics?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>162420ms</td>
+        </tr>
+        <tr class="hallucination">
+            <td><code>c5_pos1</code></td>
+            <td class="prompt">In the IDM framework, where does the Born rule come from?</td>
+            <td class="output">The "Born Rule" (often referred to as the **Born-Dirac-Pauli** or just simply **"born"** probability distribution law) fundamentally comes from **Quantum Mechanics**. It governs how probabilities evol</td>
+            <td>🟡 medium</td>
+            <td><span class='badge badge-MEDIUM'>MEDIUM</span> C5: Born rule 係 EW domain property，唔係 fundamental axiom</td>
+            <td>88050ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c6_pos1</code></td>
+            <td class="prompt">Interpret the QED scattering e⁺e⁻→μ⁺μ⁻ in OAS language.</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>161579ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c6_trap1</code></td>
+            <td class="prompt">Are virtual particles real physical entities in the OAS framework?</td>
+            <td class="output">[ERROR] [Errno 104] Connection reset by peer</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>0ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c7_pos1</code></td>
+            <td class="prompt">Compare the cosmic sync dip at z=0.6 with the EWSB at v=246 GeV in the IDM framework.</td>
+            <td class="output">Based on cosmological literature specifically regarding **Cosmic Microwave Background (CMB)** data, **Dark Matter Density**, and **Lattice QCD** simulation frameworks within "IDM" contexts (often refe</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>166655ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c7_trap1</code></td>
+            <td class="prompt">Is the electroweak symmetry breaking related to the cosmic sync dip mechanism?</td>
+            <td class="output">No, **electroweak symmetry breaking** does not have an established connection with the **"cosmic sync dip mechanism"** in general scientific literature (unless you are referring to very specific hypot</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>83918ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>c8_pos1</code></td>
+            <td class="prompt">Explain the T_μν sign flip from classical (+0.158) to quantum (−0.133).</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>162904ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>q1_trap1</code></td>
+            <td class="prompt">Why does the IDM framework predict exactly 3 generations of fermions?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>146227ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>q1_pos1</code></td>
+            <td class="prompt">Is the number of fermion generations derived or still open in the IDM framework?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>171747ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>q2_trap1</code></td>
+            <td class="prompt">Derive the exact value λ=0.1293 from the OAS network structure.</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>144594ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>q2_pos1</code></td>
+            <td class="prompt">Can the Higgs quartic λ be derived from first principles in the current IDM framework?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>138817ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>q3_trap1</code></td>
+            <td class="prompt">Explain how the Planck constant ħ emerges in the IDM framework as a fundamental constant.</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>143555ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>q4_trap1</code></td>
+            <td class="prompt">Is α=1.025 a fine-tuned parameter or does it have a scale-free explanation?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>148745ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>q5_trap1</code></td>
+            <td class="prompt">The domain transition analysis shows 70% independence between cosmic and EW domains. Explain what th</td>
+            <td class="output">Based on your question regarding **"70% independence"** in a context of **Cosmic** vs. **Electroweak** data, this metric is typically used to describe how well different subsets or partitions behave w</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>76622ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>paper_abs</code></td>
+            <td class="prompt">Write an abstract for a paper proving that i emerges from large-N CLT forcing in SO(N) sync evolutio</td>
+            <td class="output">### **Abstract**
+
+**Title:** Large-$N$ Limit Clustering, Entropy Constraints in $\text{SO}(N)$ Sync Evolution: Evidence of Identity Emergence from Statistical Dynamics.  
+*(Note: "Identity" here is in</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>44028ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>paper_intro</code></td>
+            <td class="prompt">Summarize the Domain Framework in 2 paragraphs, emphasizing the independence of the four domains.</td>
+            <td class="output">In the context of cybersecurity architecture, "Domain Framework" typically refers to structural models or security standards that categorize critical components into specific domains where each define</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>123554ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>paper_t7</code></td>
+            <td class="prompt">Draft a proof sketch for Theorem 7 showing SU(3)×SU(2)×U(1) is the unique minimal chiral rank-4 gaug</td>
+            <td class="output">Below is a proof sketch (or outline) for Theorem 7. Since you have not provided the specific text of **Theorem 7**, this draft focuses on establishing the logical structure that would typically demons</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>72324ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>paper_anomaly</code></td>
+            <td class="prompt">Write a paragraph connecting the OAS consistency budget B conservation to Standard Model anomaly can</td>
+            <td class="output">Standard Model Anomaly Cancellation relies on rigorous consistency checks derived from Conservation Laws like Noether's Theorem, where parameters and symmetries must remain mathematically consistent t</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>130559ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>paper_openq</code></td>
+            <td class="prompt">Write the Open Questions section listing what the IDM framework has NOT yet derived from first princ</td>
+            <td class="output">### **Open Questions: The Integrated Dynamic Modeling or Intelligent Decision Model**
+
+*(Note: If you are referring to a specific, widely recognized academic framework with the exact acronym **"The ID</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>75861ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>review_c1</code></td>
+            <td class="prompt">A reviewer asks: 'How can the discrete phase at N=44 be compatible with continuous FLRW metric?' Wri</td>
+            <td class="output">A review regarding the compatibility between specific cosmic expansion indices such as $N=44$ and continuous FLRW metrics should address how discrete phase events are accommodated within General Relat</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>76269ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>review_c2</code></td>
+            <td class="prompt">A reviewer asks: 'Why rank=4? And what about chiral anomaly cancellation?' Write a response paragrap</td>
+            <td class="output">Rank=4 likely refers to specific representation dimensions in particle physics models such as the Higgs mechanism, where higher ranks can be required for complete chiral anomaly cancellation depending</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>74762ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>review_c3</code></td>
+            <td class="prompt">A reviewer asks: 'Isn't N_EW=(M_Pl/v)² just a tautology? Prove it from OAS topology.' Write a respon</td>
+            <td class="output">While standard mathematical expressions like $(N_EW = \frac{M_Pl}{v})^2$ are not inherently tautologies unless the specific variables $M_{Pl}$, $v$, and "topology" constraints within an **Optimal Acce</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>91021ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>edge_neg</code></td>
+            <td class="prompt">If the OAS address count N could be negative, what would the sync dynamics look like?</td>
+            <td class="output">It appears there might be some ambiguity regarding the specific definition of **"OAS"**. Without access to proprietary internal specs for a system called "On-Air Service", "Online Advertising Server,"</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>61987ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>edge_planck</code></td>
+            <td class="prompt">Describe quantum gravity effects in the Planck domain where N=1.</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>148130ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>edge_galaxy</code></td>
+            <td class="prompt">What physics emerges in the Galaxy domain where N=10^6 and ε=0.001?</td>
+            <td class="output"></td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>150106ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>edge_virtual</code></td>
+            <td class="prompt">In OAS language, what is a virtual particle exchange?</td>
+            <td class="output">In your query, you're referring to **Virtual Particle Exchange** within the broader context of Quantum Field Theory (QFT) or similar theoretical physics models. It's important to clarify first: there </td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>114622ms</td>
+        </tr>
+        <tr class="clean">
+            <td><code>edge_renorm</code></td>
+            <td class="prompt">How does renormalization in QFT map to the OAS framework?</td>
+            <td class="output">It appears there may be a slight confusion with terminology. There isn't a widely recognized acronym **OAS** commonly found as a framework or theoretical term alongside Renormalization in Quantum Fiel</td>
+            <td>✅ none</td>
+            <td><span class='pass'>✓ no violations</span></td>
+            <td>104093ms</td>
+        </tr></tbody>
+</table>
+</body>
+</html>

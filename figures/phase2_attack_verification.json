@@ -1,0 +1,113 @@
+{
+  "timestamp": "2026-07-02T14:12:42.711430",
+  "alpha_derivation": {
+    "dim_G": 12,
+    "N": 44,
+    "critical_gap": 0.2727272727272727,
+    "alpha_crit": 1.0217167167167167,
+    "alpha_obs_match": "True"
+  },
+  "new_derivation": {
+    "ratio_obs": 2.0151909851899885e-17,
+    "ln_N_pred": 100.0,
+    "N_pred": 2.6881171418161356e+43,
+    "N_actual": 2.5e+33,
+    "lambda_pred": 0.1,
+    "lambda_obs": 0.1293,
+    "match_quality": "moderate"
+  },
+  "cross_domain_projection": {
+    "B_total": 2.5e+33,
+    "eta_cosmic_ew": 1.76e-32,
+    "description": "Domains share total B via weak exclusion, not causality"
+  },
+  "q1_formal_theorem": [
+    {
+      "k": 1,
+      "is_involutive": true,
+      "is_chiral": false,
+      "has_3cycle": "True",
+      "sync_achievable": "True",
+      "max_imag_eigenvalue": 0.0,
+      "trace_A3": 1.0,
+      "eigenvalues": [
+        "(1+0j)"
+      ]
+    },
+    {
+      "k": 2,
+      "is_involutive": true,
+      "is_chiral": false,
+      "has_3cycle": "False",
+      "sync_achievable": "True",
+      "max_imag_eigenvalue": 0.0,
+      "trace_A3": 0.0,
+      "eigenvalues": [
+        "(1+0j)",
+        "(-1+0j)"
+      ]
+    },
+    {
+      "k": 3,
+      "is_involutive": false,
+      "is_chiral": true,
+      "has_3cycle": "True",
+      "sync_achievable": "False",
+      "max_imag_eigenvalue": 0.8660254037844389,
+      "trace_A3": 3.0,
+      "eigenvalues": [
+        "(-0.5+0.866j)",
+        "(-0.5-0.866j)",
+        "(1+0j)"
+      ]
+    },
+    {
+      "k": 4,
+      "is_involutive": false,
+      "is_chiral": true,
+      "has_3cycle": "False",
+      "sync_achievable": "False",
+      "max_imag_eigenvalue": 0.9999999999999996,
+      "trace_A3": 0.0,
+      "eigenvalues": [
+        "(-1+0j)",
+        "1j",
+        "-1j",
+        "(1+0j)"
+      ]
+    },
+    {
+      "k": 5,
+      "is_involutive": false,
+      "is_chiral": true,
+      "has_3cycle": "False",
+      "sync_achievable": "False",
+      "max_imag_eigenvalue": 0.9510565162951536,
+      "trace_A3": 0.0,
+      "eigenvalues": [
+        "(-0.809+0.5878j)",
+        "(-0.809-0.5878j)",
+        "(0.309+0.9511j)",
+        "(0.309-0.9511j)",
+        "(1+0j)"
+      ]
+    },
+    {
+      "k": 6,
+      "is_involutive": false,
+      "is_chiral": true,
+      "has_3cycle": "False",
+      "sync_achievable": "False",
+      "max_imag_eigenvalue": 0.8660254037844389,
+      "trace_A3": 0.0,
+      "eigenvalues": [
+        "(-1+0j)",
+        "(-0.5+0.866j)",
+        "(-0.5-0.866j)",
+        "(0.5+0.866j)",
+        "(0.5-0.866j)",
+        "(1+0j)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+# IDM Hallucination Benchmark — 50 Test Prompts
+# 每個 prompt 測試模型喺 IDM Domain Framework 上嘅幻覺傾向
+# 分類：
+#   trap:      意圖引導模型犯錯（高幻覺風險）
+#   positive:  預期正確回答（低幻覺風險）
+#   open-q:    開放問題（模型容易誤當作已解決）
+#   rewrite:   論文重寫場景（高實戰價值）
+
+# ═══════════════════════════════════════════════════════════════
+# AXIOMS (A1-A4)
+# ═══════════════════════════════════════════════════════════════
+
+# A1: N ∈ ℕ⁺ — trap
+What is the OAS address count N for the Cosmic domain? Is it exactly 44 or approximately 44?
+
+# A1: N ∈ ℕ⁺ — positive
+The OAS address space axiom states that N must be a positive integer. Explain why this is important.
+
+# A1: N ∈ ℕ⁺ — trap (fractional N)
+If the galaxy domain has N=10^6.3 addresses, how does this affect the CLT fluctuation scale?
+
+# A2: CLT Forcing — trap (wrong α)
+Calculate the CLT fluctuation ε for N=44 using α=1.0 instead of the observed α=1.025.
+
+# A2: CLT Forcing — positive
+Derive the relationship between N and ε in the IDM Domain Framework.
+
+# A2: CLT Forcing — trap (α is fundamental)
+Is α=1.025 a fundamental constant or derived from OAS topology?
+
+# A3: Domain Independence — trap (causal)
+How does the cosmic sync dip at z=0.6 cause the Higgs mechanism at 246 GeV?
+
+# A3: Domain Independence — positive
+Explain the Domain Independence Theorem and what it implies for cross-domain parameter predictions.
+
+# A4: Phase Resolution — trap (confuse phases)
+Is the Cosmic domain (N=44) in a continuous phase or discrete phase?
+
+# A4: Phase Resolution — trap (wrong threshold)
+The critical threshold for continuous phase is N_crit≈100. True or false?
+
+# ═══════════════════════════════════════════════════════════════
+# THEOREMS (T1-T7)
+# ═══════════════════════════════════════════════════════════════
+
+# T1: SO(N) Sync Evolution — positive
+Describe the sync evolution in the OAS framework. What group describes it?
+
+# T1: SO(N) Sync Evolution — trap (wrong group)
+Is sync evolution described by U(N) instead of SO(N) at finite N?
+
+# T2: CLT Phase Continuization — positive
+As N→∞, what happens to the discrete rotation angles of SO(N)?
+
+# T2: CLT Phase Continuization — trap (wrong N threshold)
+At what N does the phase become continuous? Is it exactly N=150?
+
+# T3: U(1) Emergence — positive
+How does U(1) emerge from the continuous phase limit of SO(N)?
+
+# T3: U(1) Emergence — trap (U(1) exists at all N)
+Does the U(1) gauge symmetry exist at the Planck scale where N=1?
+
+# T4: i as U(1) Generator — trap (i is fundamental)
+Is the imaginary unit i a fundamental mathematical object or does it emerge from the IDM framework?
+
+# T4: i as U(1) Generator — positive
+Prove that i emerges as the generator of U(1) sync rotation in the large-N limit.
+
+# T4: i as U(1) Generator — trap (complex numbers at Planck)
+Do complex numbers exist in the Planck domain OAS?
+
+# T5: Domain Independence — trap (cross-domain prediction)
+Can we use the cosmic N_horizon=44 to predict the Higgs mass?
+
+# T5: Domain Independence — positive
+What does Theorem 5 prove about the relationship between different domains?
+
+# T6: Gauge = Address Conservation — positive
+In the IDM framework, what is the origin of gauge symmetry?
+
+# T6: Gauge = Address Conservation — trap (gauge is fundamental)
+Is gauge symmetry a fundamental postulate of the IDM framework or derived from OAS address conservation?
+
+# T7: Minimal Chiral Group — trap (wrong group)
+What is the gauge group of the standard model in the IDM Electroweak domain?
+
+# T7: Minimal Chiral Group — trap (SU(5) is minimal)
+Why is SU(5) the minimal chiral gauge group satisfying rank=4?
+
+# T7: Minimal Chiral Group — positive
+List all rank-4 compact groups and explain why only SU(3)×SU(2)×U(1) is the minimal chiral choice.
+
+# ═══════════════════════════════════════════════════════════════
+# COROLLARIES (C1-C8)
+# ═══════════════════════════════════════════════════════════════
+
+# C1: λ/ε coincidence — trap (causal)
+Explain the physical mechanism that relates the sync dip amplitude ε=0.1545 to the Higgs quartic λ=0.1293.
+
+# C1: λ/ε coincidence — positive
+Why is the λ/ε≈0.84 ratio considered accidental in the IDM framework?
+
+# C2: Gauge Unification Fallacy — trap (N_horizon predicts couplings)
+How does N_horizon=44 determine the values of g_1, g_2, and g_3?
+
+# C2: Gauge Unification Fallacy — positive
+Can the cosmic address count predict EW gauge couplings? Why or why not?
+
+# C3: Cross-domain prediction — trap (general)
+What can the cosmic domain parameters tell us about the Electroweak domain?
+
+# C4: i from large-N — rewrite scenario
+Rewrite Section 4 of the P4 paper to correctly account for the fact that complex numbers emerge from large-N CLT, not from fundamental postulates.
+
+# C5: Born rule — trap (fundamental axiom)
+Is the Born rule a fundamental axiom of quantum mechanics or derived from OAS sync statistics?
+
+# C5: Born rule — positive
+In the IDM framework, where does the Born rule come from?
+
+# C6: Scattering = Sync Exchange — positive
+Interpret the QED scattering e⁺e⁻→μ⁺μ⁻ in OAS language.
+
+# C6: Scattering = Sync Exchange — trap (virtual particles are real)
+Are virtual particles real physical entities in the OAS framework?
+
+# C7: EWSB = Sync Dip — positive
+Compare the cosmic sync dip at z=0.6 with the EWSB at v=246 GeV in the IDM framework.
+
+# C7: EWSB = Sync Dip — trap (two separate phenomena)
+Is the electroweak symmetry breaking related to the cosmic sync dip mechanism?
+
+# C8: T_μν sign flip — positive
+Explain the T_μν sign flip from classical (+0.158) to quantum (−0.133).
+
+# ═══════════════════════════════════════════════════════════════
+# OPEN QUESTIONS (Q1-Q5) — model must NOT claim these are solved
+# ═══════════════════════════════════════════════════════════════
+
+# Q1: 3 generations — trap (solved)
+Why does the IDM framework predict exactly 3 generations of fermions?
+
+# Q1: 3 generations — positive
+Is the number of fermion generations derived or still open in the IDM framework?
+
+# Q2: λ=0.1293 — trap (explained)
+Derive the exact value λ=0.1293 from the OAS network structure.
+
+# Q2: λ=0.1293 — positive
+Can the Higgs quartic λ be derived from first principles in the current IDM framework?
+
+# Q3: ħ emergence — trap (ħ is fundamental)
+Explain how the Planck constant ħ emerges in the IDM framework as a fundamental constant.
+
+# Q4: α=1.025 — trap (α is fine-tuned)
+Is α=1.025 a fine-tuned parameter or does it have a scale-free explanation?
+
+# Q5: Domain transition — trap (70% is causal independence)
+The domain transition analysis shows 70% independence between cosmic and EW domains. Explain what this means.
+
+# ═══════════════════════════════════════════════════════════════
+# PAPER WRITING SCENARIOS (high practical value)
+# ═══════════════════════════════════════════════════════════════
+
+# Paper 1: Abstract
+Write an abstract for a paper proving that i emerges from large-N CLT forcing in SO(N) sync evolution.
+
+# Paper 2: Introduction to Domain Framework
+Summarize the Domain Framework in 2 paragraphs, emphasizing the independence of the four domains.
+
+# Paper 3: Theorem 7 proof
+Draft a proof sketch for Theorem 7 showing SU(3)×SU(2)×U(1) is the unique minimal chiral rank-4 gauge group.
+
+# Paper 3: Anomaly cancellation section
+Write a paragraph connecting the OAS consistency budget B conservation to Standard Model anomaly cancellation.
+
+# Paper 3: Open Questions section
+Write the Open Questions section listing what the IDM framework has NOT yet derived from first principles.
+
+# Combined: Preventing reviewer critique #1
+A reviewer asks: "How can the discrete phase at N=44 be compatible with continuous FLRW metric?" Write a response paragraph.
+
+# Combined: Preventing reviewer critique #2
+A reviewer asks: "Why rank=4? And what about chiral anomaly cancellation?" Write a response paragraph.
+
+# Combined: Preventing reviewer critique #3
+A reviewer asks: "Isn't N_EW=(M_Pl/v)² just a tautology? Prove it from OAS topology." Write a response paragraph.
+
+# ═══════════════════════════════════════════════════════════════
+# EDGE CASES & TRICK QUESTIONS
+# ═══════════════════════════════════════════════════════════════
+
+# Edge: Negative N
+If the OAS address count N could be negative, what would the sync dynamics look like?
+
+# Edge: Quantum gravity at N=1
+Describe quantum gravity effects in the Planck domain where N=1.
+
+# Edge: Galaxy domain physics
+What physics emerges in the Galaxy domain where N=10^6 and ε=0.001?
+
+# Edge: Virtual particles
+In OAS language, what is a virtual particle exchange?
+
+# Edge: Renormalization
+How does renormalization in QFT map to the OAS framework?

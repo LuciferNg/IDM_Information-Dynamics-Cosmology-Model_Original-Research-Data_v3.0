@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-07-02T13:00:11.985153",
+  "verdict": "PARTIAL",
+  "completeness_pct": 86.41975308641975,
+  "checks": {
+    "axiom_chain": true,
+    "numerical": false,
+    "new_content": true,
+    "dimensional": true,
+    "predictions": true,
+    "issues": true
+  }
+}

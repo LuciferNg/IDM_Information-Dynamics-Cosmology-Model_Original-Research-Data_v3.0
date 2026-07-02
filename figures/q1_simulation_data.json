@@ -1,0 +1,276 @@
+{
+  "perm_results": [
+    {
+      "k": 1,
+      "total_perms": 1,
+      "chiral_cycle_perms": 0,
+      "has_chiral": false,
+      "minimal": false,
+      "is_minimal": false
+    },
+    {
+      "k": 2,
+      "total_perms": 2,
+      "chiral_cycle_perms": 0,
+      "has_chiral": false,
+      "minimal": false,
+      "is_minimal": false
+    },
+    {
+      "k": 3,
+      "total_perms": 6,
+      "chiral_cycle_perms": 2,
+      "has_chiral": true,
+      "minimal": true,
+      "is_minimal": true
+    },
+    {
+      "k": 4,
+      "total_perms": 24,
+      "chiral_cycle_perms": 6,
+      "has_chiral": true,
+      "minimal": false,
+      "is_minimal": false
+    },
+    {
+      "k": 5,
+      "total_perms": 120,
+      "chiral_cycle_perms": 24,
+      "has_chiral": true,
+      "minimal": false,
+      "is_minimal": false
+    },
+    {
+      "k": 6,
+      "total_perms": 720,
+      "chiral_cycle_perms": 0,
+      "has_chiral": false,
+      "minimal": false,
+      "is_minimal": false
+    }
+  ],
+  "graph_results": [
+    {
+      "N": 30,
+      "alpha": 1.025,
+      "k": 1,
+      "trials": 50,
+      "collision_rate": 0.0,
+      "total_pairs": 0,
+      "total_collisions": 0,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 30,
+      "alpha": 1.025,
+      "k": 2,
+      "trials": 50,
+      "collision_rate": 0.03146374829001368,
+      "total_pairs": 731,
+      "total_collisions": 23,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 30,
+      "alpha": 1.025,
+      "k": 3,
+      "trials": 50,
+      "collision_rate": 0.03925619834710744,
+      "total_pairs": 1452,
+      "total_collisions": 57,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    },
+    {
+      "N": 30,
+      "alpha": 1.025,
+      "k": 4,
+      "trials": 50,
+      "collision_rate": 0.03204327923429047,
+      "total_pairs": 2403,
+      "total_collisions": 77,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    },
+    {
+      "N": 50,
+      "alpha": 1.025,
+      "k": 1,
+      "trials": 50,
+      "collision_rate": 0.0,
+      "total_pairs": 0,
+      "total_collisions": 0,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 50,
+      "alpha": 1.025,
+      "k": 2,
+      "trials": 50,
+      "collision_rate": 0.023368251410153102,
+      "total_pairs": 1241,
+      "total_collisions": 29,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 50,
+      "alpha": 1.025,
+      "k": 3,
+      "trials": 50,
+      "collision_rate": 0.022459078797106968,
+      "total_pairs": 2627,
+      "total_collisions": 59,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    },
+    {
+      "N": 50,
+      "alpha": 1.025,
+      "k": 4,
+      "trials": 50,
+      "collision_rate": 0.021632758176667526,
+      "total_pairs": 3883,
+      "total_collisions": 84,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    },
+    {
+      "N": 100,
+      "alpha": 1.025,
+      "k": 1,
+      "trials": 50,
+      "collision_rate": 0.0,
+      "total_pairs": 0,
+      "total_collisions": 0,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 100,
+      "alpha": 1.025,
+      "k": 2,
+      "trials": 50,
+      "collision_rate": 0.012530315278900566,
+      "total_pairs": 2474,
+      "total_collisions": 31,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 100,
+      "alpha": 1.025,
+      "k": 3,
+      "trials": 50,
+      "collision_rate": 0.011878397422991745,
+      "total_pairs": 4967,
+      "total_collisions": 59,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    },
+    {
+      "N": 100,
+      "alpha": 1.025,
+      "k": 4,
+      "trials": 50,
+      "collision_rate": 0.012561152981621049,
+      "total_pairs": 7563,
+      "total_collisions": 95,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    },
+    {
+      "N": 200,
+      "alpha": 1.025,
+      "k": 1,
+      "trials": 50,
+      "collision_rate": 0.0,
+      "total_pairs": 0,
+      "total_collisions": 0,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 200,
+      "alpha": 1.025,
+      "k": 2,
+      "trials": 50,
+      "collision_rate": 0.004310344827586207,
+      "total_pairs": 4872,
+      "total_collisions": 21,
+      "chiral_independence": false,
+      "avg_chiral_independence": 0.0
+    },
+    {
+      "N": 200,
+      "alpha": 1.025,
+      "k": 3,
+      "trials": 50,
+      "collision_rate": 0.004818092428711898,
+      "total_pairs": 10170,
+      "total_collisions": 49,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    },
+    {
+      "N": 200,
+      "alpha": 1.025,
+      "k": 4,
+      "trials": 50,
+      "collision_rate": 0.004553673073059666,
+      "total_pairs": 14933,
+      "total_collisions": 68,
+      "chiral_independence": true,
+      "avg_chiral_independence": 1.0
+    }
+  ],
+  "alpha_results": [
+    {
+      "alpha": 0.5,
+      "k2_collision_rate": 0.00418702023726448,
+      "k3_collision_rate": 0.003436426116838488
+    },
+    {
+      "alpha": 0.8,
+      "k2_collision_rate": 0.00837404047452896,
+      "k3_collision_rate": 0.007216494845360825
+    },
+    {
+      "alpha": 1.0,
+      "k2_collision_rate": 0.01256106071179344,
+      "k3_collision_rate": 0.01168384879725086
+    },
+    {
+      "alpha": 1.025,
+      "k2_collision_rate": 0.01256106071179344,
+      "k3_collision_rate": 0.01168384879725086
+    },
+    {
+      "alpha": 1.2,
+      "k2_collision_rate": 0.01674808094905792,
+      "k3_collision_rate": 0.016151202749140895
+    },
+    {
+      "alpha": 1.5,
+      "k2_collision_rate": 0.027913468248429867,
+      "k3_collision_rate": 0.026804123711340205
+    },
+    {
+      "alpha": 2.0,
+      "k2_collision_rate": 0.041172365666434056,
+      "k3_collision_rate": 0.03951890034364261
+    },
+    {
+      "alpha": 3.0,
+      "k2_collision_rate": 0.08862526168876483,
+      "k3_collision_rate": 0.08487972508591066
+    }
+  ],
+  "verdict": {
+    "minimal_chiral_k": 3,
+    "simulation_supports": false
+  }
+}
