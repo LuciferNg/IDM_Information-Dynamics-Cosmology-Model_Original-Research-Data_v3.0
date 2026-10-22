@@ -1,5 +1,7 @@
 (* Load SARAH and generate SPheno code — optimised for speed *)
-Get["/tmp/SARAH_patched.m"];
+(* SARAH.m already patched for CLI *)
+(* Just load it directly *)
+Needs["SARAH`"];
 
 (* Clean previous output *)
 If[DirectoryQ[ExpandFileName["~/.WolframEngine/Applications/SARAH/Output/IDM_GUT"]],
@@ -28,7 +30,7 @@ Print["Starting MakeSPheno[] with optimised settings..."];
 MakeSPheno[];
 
 (* Verify output *)
-sphenoDir = ToFileName[{$sarahOutputDir, "EWSB", "SPheno"}];
+sphenoDir = FileNameJoin[{$sarahOutputDir, "EWSB", "SPheno"}];
 If[FileType[sphenoDir] === Directory,
   files = FileNames["*.f90", sphenoDir];
   Print["=== GENERATION COMPLETE ==="];

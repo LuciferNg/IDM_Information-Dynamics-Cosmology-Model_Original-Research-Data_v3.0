@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "note": "Peer review response \u2014 converged Yukawa"
+  },
+  "yukawa_MZ": {
+    "yt": 0.867662,
+    "yb": 0.02377,
+    "yc": 0.007494,
+    "ys": 0.00054,
+    "yb_match": true
+  },
+  "gauge_MZ": {
+    "gY": 0.3901,
+    "g2": 0.6391,
+    "g3": 1.0641
+  },
+  "dissipation_Fritzsch": {
+    "w10": 0.11273257935060198,
+    "w126": 0.887267420649398,
+    "CKM_Vcb": 0.0317,
+    "CKM_Vus": 0.1455
+  }
+}

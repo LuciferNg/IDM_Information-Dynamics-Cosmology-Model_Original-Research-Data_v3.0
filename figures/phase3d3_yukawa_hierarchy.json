@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "phase": 3,
+    "workstream": "D3",
+    "title": "Yukawa Hierarchy from Routing Eigenvalues"
+  },
+  "laplacian_eigenvalues": [
+    {
+      "real": 0.0,
+      "imag": 0.0,
+      "abs": 0.0
+    },
+    {
+      "real": 1.5,
+      "imag": 0.866,
+      "abs": 1.7321
+    },
+    {
+      "real": 1.5,
+      "imag": -0.866,
+      "abs": 1.7321
+    }
+  ],
+  "yukawa_ratios_raw": {
+    "y3_y3": 1.0,
+    "y2_y3": 0.3238,
+    "y1_y3": 0.323826
+  },
+  "yukawa_after_ckm": {
+    "y_c_y_t": 0.064765,
+    "y_u_y_t": 0.012953
+  },
+  "verdict": {
+    "hierarchy_mechanism": "routing eigenvalue spectrum + CKM mixing degeneracy breaking",
+    "quantitative_match": "approximate (needs full CKM diagonalisation)",
+    "open_problem": "Exact Yukawa values require complete SO(10) matter representation embedding"
+  }
+}

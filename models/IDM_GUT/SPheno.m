@@ -1,8 +1,37 @@
+(* ::Package:: *)
+
+(* SARAH model file for IDM_GUT (OAS SO(10) → SM effective theory) *)
+(* Generated: 2026-07-03 *)
+(* Phase 7: OAS SPheno Pipeline *)
+
+(* ─── Renormalization Group Input ─── *)
 MINPAR={{1,m0},
          {2,m12},
          {3,TanBeta},
          {4,SignumMu},
          {5,Azero}};
+
+(* ─── Custom LesHouches Blocks for OAS boundary control ─── *)
+(* These blocks can be set in LesHouches.in.OAS to override
+   the hardcoded OAS GUT-scale boundary conditions.           *)
+(*                                                           *)
+ReadBlocks = {GUTSCALE, GAUGEORIGIN, YUKAWAORIGIN};
+
+(* Block GUTSCALE:  1  M_GUT  (default: 2.0E16) *)
+(* Block GAUGEORIGIN:
+   1  g1_GUT  (default: 0.570)
+   2  g2_GUT  (default: 0.713)
+   3  g3_GUT  (default: 0.710) *)
+(* Block YUKAWAORIGIN:
+  11  y_t_GUT  (default: 0.0553)
+  12  y_c_GUT  (default: 9.07E-5)
+  13  y_u_GUT  (default: 3.81E-6)
+  14  y_tau_GUT (default: 0.0154)
+  15  y_b_GUT  (default: 0.0535)
+  16  y_s_GUT  (default: 3.66E-4)
+  17  y_d_GUT  (default: 6.77E-6)
+  18  y_mu_GUT (default: 1.54E-4)
+  19  y_e_GUT  (default: 2.71E-7) *)
 
 RealParameters = {TanBeta, m0, m12, Azero, SignumMu};
 ParametersToSolveTadpoles = {\[Mu], B[\[Mu]]};
@@ -13,54 +42,32 @@ RenormalizationScale = Sqrt[(mq2[3, 3] + (vu^2*conj[Yu[3, 3]]*Yu[3, 3])/2)*
   ((vd*\[Mu]*conj[Yu[3, 3]] - vu*conj[T[Yu]][3, 3])*
    (vd*conj[\[Mu]]*Yu[3, 3] - vu*T[Yu][3, 3]))/2];
 
-(*
-  OAS GUT scale: M_GUT = 2×10¹⁶ GeV
-  Use fixed gauge coupling as GUT scale condition
-*)
-ConditionGUTscale = g1 == 0.570;
+(* ─── GUT scale condition ─── *)
+(* Use GAUGEORIGIN block [1] if defined, else OAS hardcoded g1=0.570 *)
+ConditionGUT = If[DefinedBlock[GAUGEORIGIN], GAUGEORIGIN[1], 0.570] == g1;
 
+(* ─── GUT-scale boundary conditions ─── *)
+(* Each parameter reads from custom block if defined, else OAS default *)
 BoundaryHighScale = {
-  (* GUT-scale gauge couplings with OAS threshold *)
-  {g1, 0.570},
-  {g2, 0.713},
-  {g3, 0.710},
+  {g1, If[DefinedBlock[GAUGEORIGIN], GAUGEORIGIN[1], 0.570]},
+  {g2, If[DefinedBlock[GAUGEORIGIN], GAUGEORIGIN[2], 0.713]},
+  {g3, If[DefinedBlock[GAUGEORIGIN], GAUGEORIGIN[3], 0.710]},
   
-  (* GUT-scale Yukawa couplings from SO(10) 10_H ⊕ 126_H *)
-  (*
-    126_H EW doublet O(1) Yukawa + 3-cycle eigenvector mixing:
-    
-    The up-type Yukawa matrix at M_GUT is:
-    Y_u = Y₁₀ · cos(θ) + Y₁₂₆ · sin(θ)
-    
-    where tan(θ) = ⟨H_u¹²⁶⟩/⟨H_u¹⁰⟩ is the 126_H/10_H VEV ratio.
-    
-    The 3×3 matrices have hierarchical structures:
-    - Y₁₀ is rank-1 dominated: (Y₁₀)ᵢⱼ ≈ y_t · δᵢ₃δⱼ₃
-    - Y₁₂₆ has Fritzsch-like texture with off-diagonal mixing
-    
-    3-cycle eigenvector mixing → 1st gen mass from 126_H:
-    y_u(GUT) = y_t · sin(θ) · ε₁₂₆ = 3.81×10⁻⁶
-    
-    This is only 1.20× the MSSM baseline (3.18×10⁻⁶),
-    a 20% correction well within the expected 126_H range.
-    
-    Reference: Phase 4 Yukawa hierarchy, Report 5.0 §9.12
-  *)
-  {Yu[1,1], 3.81e-6},   (* y_u from 126_H EW doublet + 3-cycle mixing *)
-  {Yu[2,2], 9.07e-5},   (* y_c from 10_H × rS = M_GUT/M_Pl *)
-  {Yu[3,3], 0.0553},    (* y_t from 10_H *)
-  {Yd[1,1], 6.77e-6},   (* y_d *)
-  {Yd[2,2], 3.66e-4},   (* y_s *)
-  {Yd[3,3], 0.0535},    (* y_b from 126_H C₄₅[d] = 3/5 *)
-  {Ye[1,1], 2.71e-7},   (* y_e *)
-  {Ye[2,2], 1.54e-4},   (* y_μ *)
-  {Ye[3,3], 0.0154},    (* y_τ *)
+  {Yu[1,1], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[13], 3.81e-6]},
+  {Yu[2,2], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[12], 9.07e-5]},
+  {Yu[3,3], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[11], 0.0553]},
   
-  (* Neutrino sector — decoupled for y_u calculation *)
+  {Yd[1,1], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[17], 6.77e-6]},
+  {Yd[2,2], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[16], 3.66e-4]},
+  {Yd[3,3], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[15], 0.0535]},
+  
+  {Ye[1,1], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[19], 2.71e-7]},
+  {Ye[2,2], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[18], 1.54e-4]},
+  {Ye[3,3], If[DefinedBlock[YUKAWAORIGIN], YUKAWAORIGIN[14], 0.0154]},
+  
   {Yv, 0},
-  {Mv, 1e15},           (* RH neutrino mass ~ GUT scale *)
+  {Mv, 1e15},
   
-  (* mSUGRA boundary conditions *)
   {T[Ye], Azero*Ye},
   {T[Yd], Azero*Yd},
   {T[Yu], Azero*Yu},
@@ -84,16 +91,17 @@ InitializationValues = {
 };
 
 (* Use 2-loop MSSM Higgs mass corrections *)
-UseHiggs2LoopMSSM = True;
+(* Disabled: UseHiggs2LoopMSSM = True;     (* 2-loop diagrammatic — skip for CLI generation *) *)
 
+(* ─── SPheno output: write used boundary values ─── *)
+OutputBlocks = {GUTSCALE, GAUGEORIGIN, YUKAWAORIGIN};
+
+(* ─── Decay and fine-tuning settings ─── *)
 QuadruplePrecision = {};
-
 ListDecayParticles = Automatic;
 ListDecayParticles3B = Automatic;
-
 DEFINITION[MatchingConditions] = Default[THDMII];
 
-(* SUSY scale input *)
 EXTPAR = {{1, M1input},
           {2, M2input},
           {3, M3input},
@@ -102,7 +110,6 @@ EXTPAR = {{1, M1input},
           {25, TanBeta}};
 
 ParametersToSolveTadpolesLowScaleInput = {mHd2, mHu2};
-
 BoundaryLowScaleInput = {
   {MassB, M1input},
   {MassWB, M2input},
@@ -113,11 +120,9 @@ BoundaryLowScaleInput = {
   {vu, Sqrt[4 mz2/(g1^2+g2^2)]*Sin[ArcTan[TanBeta]]}
 };
 
-(* mSUGRA input values matching SPheno MSSM run *)
 DefaultInputValues[1] = {m0 -> 1000, m12 -> 1000, TanBeta -> 10, SignumMu -> 1, Azero -> -1500};
 
 NeglectLoopsInvolving = {};
-
 IncludeFineTuning = True;
 FineTuningParameters = {
   {m0, 1/2}, {m12, 1}, {Azero, 1}, {\[Mu], 1}, {B[\[Mu]], 1}

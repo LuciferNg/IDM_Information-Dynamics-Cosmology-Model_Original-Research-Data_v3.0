@@ -1,0 +1,30 @@
+{
+  "g_at_MZ": [
+    0.357357,
+    0.652,
+    1.221
+  ],
+  "g_at_SUSY": [
+    0.35881159896780995,
+    0.6456751761891449,
+    1.1320296574634416
+  ],
+  "unification": {
+    "M_GUT": 1.0000000000000033e+19,
+    "log10_M_GUT": 19.0,
+    "g_GUT": 0.638413813277276,
+    "g_GUT2": 0.4075721969832326,
+    "spread": 0.4261522077037,
+    "g1": 0.4014466345518164,
+    "g2": 0.6861959630244949,
+    "g3": 0.8275988422555164
+  },
+  "oas_comparison": {
+    "SU5_prediction": 0.815,
+    "SM_direct_prediction": 0.576,
+    "error_vs_SU5_pct": 21.667016775794355,
+    "error_vs_SM_pct": 10.83573147174931
+  },
+  "verdict": "requires_further_corrections",
+  "notes": "2-loop MSSM at 1-loop y_t approximation. Full 2-loop y_t running and SUSY threshold corrections needed for precise unification."
+}

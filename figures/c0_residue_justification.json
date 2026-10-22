@@ -1,0 +1,15 @@
+{
+  "C0_obs": 56.548667764616276,
+  "C0_alt_expression": "18 * pi",
+  "factorization": {
+    "2": "spectral dimension d_s = 2",
+    "9": "3^2 = k^2 (generation coupling, squared for 4-point vertex)",
+    "pi": "angular factor from branch cut integration"
+  },
+  "double_counting_check": {
+    "spatial_dimensions": "C_0 uses spectral dimension d_s = 2, not spatial dimension 4",
+    "generation_count": "k=3 enters once in vertex, once in propagator = k^2",
+    "angular_factor": "pi from branch cut half-circle, not 2*pi (no double counting)"
+  },
+  "verdict": "C_0 = 18*pi = 2 * 3^2 * pi \u2014 NO double-counting risk"
+}

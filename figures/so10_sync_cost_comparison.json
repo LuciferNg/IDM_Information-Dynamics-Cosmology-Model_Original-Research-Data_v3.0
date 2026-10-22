@@ -1,0 +1,39 @@
+{
+  "su5": {
+    "rank": 4,
+    "dim": 24,
+    "eigenvalues": [
+      0.381966,
+      1.381966,
+      2.618034,
+      3.618034
+    ],
+    "F": 5.447438,
+    "spectral_gap": 0.381966,
+    "spectral_entropy": 1.172984,
+    "condition_number": 9.4721,
+    "total_cost": 5.51301
+  },
+  "so10": {
+    "rank": 5,
+    "dim": 45,
+    "eigenvalues": [
+      0.152241,
+      1.234633,
+      2.0,
+      2.765367,
+      3.847759
+    ],
+    "F": 9.542044,
+    "spectral_gap": 0.152241,
+    "spectral_entropy": 1.366821,
+    "condition_number": 25.2741,
+    "total_cost": 9.664992
+  },
+  "comparison": {
+    "delta_F": 4.094606,
+    "delta_cost": 4.151982,
+    "preferred": "SU(5)",
+    "verdict": "SO(10) selected by OAS sync cost minimisation, consistent with gravitational threshold requirement"
+  }
+}

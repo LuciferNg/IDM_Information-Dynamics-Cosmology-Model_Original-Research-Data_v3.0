@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "phase": 4,
+    "title": "Yukawa Hierarchy \u2014 Dual Higgs 10_H vs 126_H Mechanism"
+  },
+  "higgs_vevs": {
+    "vev_16": 2.9004347712204816e+19,
+    "vev_126": 2.9004347712204816e+19,
+    "r_suppression": 0.001639,
+    "M_GUT": 2e+16,
+    "M_Pl": 1.22e+19
+  },
+  "operator_hierarchy": {
+    "y_t_operator": "10_H\u00b716\u00b716 (dim-4)",
+    "y_c_operator": "10_H\u00b7126_H\u00b716\u00b716/M (dim-5)",
+    "y_u_operator": "10_H\u00b7126_H\u00b2\u00b716\u00b716/M\u00b2 (dim-6)",
+    "suppression_factor": 0.001639
+  },
+  "clebsch_coefficients": {
+    "Q": 1.0,
+    "u_c": 2.0,
+    "e_c": 3.0
+  },
+  "yukawa_ratios_no_rge": {
+    "y_c_y_t": 0.001639,
+    "y_u_y_t": 5.37e-06,
+    "y_b_y_t": 1.0,
+    "y_s_y_t": 0.001639,
+    "y_d_y_t": 2.69e-06
+  },
+  "yukawa_after_rge": {
+    "y_t_EW": 0.9405,
+    "y_c_EW": 0.000154,
+    "y_u_EW": 9e-08,
+    "y_b_EW": 0.082989,
+    "y_s_EW": 7.3e-05,
+    "y_d_EW": 7e-08
+  },
+  "verdict": {
+    "degeneracy_broken": true,
+    "mechanism": "10_H + 126_H dual Higgs operator hierarchy",
+    "ad_hoc_tuning": "None \u2014 all from W1 dissipation + observed CKM",
+    "remaining_gap": "y_c/y_t and y_u/y_t within 1-10\u00d7 of observed \u2014 needs RGE refinement"
+  }
+}

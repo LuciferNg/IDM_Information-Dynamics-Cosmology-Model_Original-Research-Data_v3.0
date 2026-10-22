@@ -1,0 +1,112 @@
+{
+  "theorem": "T9: Generation Triplet",
+  "statement": "k=3 is the unique solution of the directed k-cycle routing equations",
+  "proof": "Characteristic polynomial p_k(lambda) = lambda^k - 1",
+  "conditions": {
+    "C1_chirality": "A_k != A_k^{-1} (non-involutive)",
+    "C2_sync": "max|Im(lambda_i)| = 0",
+    "C3_anomaly_free": "Tr(A_k^3) != 0"
+  },
+  "k_analysis": [
+    {
+      "k": 1,
+      "is_chiral": false,
+      "sync_achievable": true,
+      "has_anomaly": true,
+      "all_three": false,
+      "eigenvalues": [
+        "(1+0j)"
+      ],
+      "trace_A3": 1.0
+    },
+    {
+      "k": 2,
+      "is_chiral": false,
+      "sync_achievable": true,
+      "has_anomaly": false,
+      "all_three": false,
+      "eigenvalues": [
+        "(1+0j)",
+        "(-1+0j)"
+      ],
+      "trace_A3": 0.0
+    },
+    {
+      "k": 3,
+      "is_chiral": true,
+      "sync_achievable": true,
+      "has_anomaly": true,
+      "all_three": true,
+      "eigenvalues": [
+        "(-0.5+0.866j)",
+        "(-0.5-0.866j)",
+        "(1+0j)"
+      ],
+      "trace_A3": 3.0
+    },
+    {
+      "k": 4,
+      "is_chiral": true,
+      "sync_achievable": true,
+      "has_anomaly": false,
+      "all_three": false,
+      "eigenvalues": [
+        "(-1+0j)",
+        "1j",
+        "-1j",
+        "(1+0j)"
+      ],
+      "trace_A3": 0.0
+    },
+    {
+      "k": 5,
+      "is_chiral": true,
+      "sync_achievable": true,
+      "has_anomaly": false,
+      "all_three": false,
+      "eigenvalues": [
+        "(-0.809+0.5878j)",
+        "(-0.809-0.5878j)",
+        "(0.309+0.9511j)",
+        "(0.309-0.9511j)",
+        "(1+0j)"
+      ],
+      "trace_A3": 0.0
+    },
+    {
+      "k": 6,
+      "is_chiral": true,
+      "sync_achievable": true,
+      "has_anomaly": false,
+      "all_three": false,
+      "eigenvalues": [
+        "(-1+0j)",
+        "(-0.5+0.866j)",
+        "(-0.5-0.866j)",
+        "(0.5+0.866j)",
+        "(0.5-0.866j)",
+        "(1+0j)"
+      ],
+      "trace_A3": 0.0
+    },
+    {
+      "k": 7,
+      "is_chiral": true,
+      "sync_achievable": true,
+      "has_anomaly": false,
+      "all_three": false,
+      "eigenvalues": [
+        "(-0.901+0.4339j)",
+        "(-0.901-0.4339j)",
+        "(-0.2225+0.9749j)",
+        "(-0.2225-0.9749j)",
+        "(1+0j)",
+        "(0.6235+0.7818j)",
+        "(0.6235-0.7818j)"
+      ],
+      "trace_A3": 0.0
+    }
+  ],
+  "unique_solution": 3,
+  "verdict": "k=3 is the unique chiral, sync-achievable, anomaly-free routing topology"
+}

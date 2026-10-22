@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "phase": "5_q3_scan",
+    "score": "81/81"
+  },
+  "Q3": {
+    "gY": 0.3924,
+    "g2": 0.6524,
+    "g3": 1.2224,
+    "delta_opt": -0.81,
+    "match": 2
+  },
+  "Q6": {
+    "yt": 1.0126,
+    "yb": 0.0632,
+    "yt_match": false,
+    "yb_match": false
+  }
+}

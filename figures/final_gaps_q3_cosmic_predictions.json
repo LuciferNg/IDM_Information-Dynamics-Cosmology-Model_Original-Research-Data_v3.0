@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "phase": "final",
+    "title": "Remaining gaps: Q3, cosmic, predictions"
+  },
+  "Q3_couplings": {
+    "g1_MGUT": 0.71,
+    "g2_MGUT": 0.6794,
+    "g3_MGUT": 0.6594,
+    "g1_MZ": 0.3897,
+    "g2_MZ": 0.622,
+    "g3_MZ": 0.9781,
+    "spread_at_MGUT": 0.0506
+  },
+  "cosmic_CMB": {
+    "epsilon": 0.1545,
+    "delta_n_s": -0.0,
+    "r_upper": 0.089,
+    "alpha_s": -4e-06
+  },
+  "predictions": [
+    {
+      "name": "SO(10) at GUT scale",
+      "detail": "g\u2081\u2248g\u2082\u2248g\u2083 at M_GUT\u22482\u00d710\u00b9\u2076 GeV via gravitational threshold",
+      "test": "JCAP 2027",
+      "status": "\u2705"
+    },
+    {
+      "name": "241-dim Higgs sector",
+      "detail": "\u03a6\u2085\u2084+\u03a6\u2084\u2085+\u03a6\u2081\u2086+\u03a6\u2081\u2082\u2086 \u2014 testable via proton decay channels",
+      "test": "JCAP 2027",
+      "status": "\ud83d\udfe1"
+    },
+    {
+      "name": "No axion needed",
+      "detail": "\u03b8_QCD residual = 4\u00d710\u207b\u00b2\u00b3 < 10\u207b\u00b9\u2070 \u2014 no QCD axion required",
+      "test": "JCAP 2027",
+      "status": "\u2705"
+    },
+    {
+      "name": "CKM from 126_H mixing",
+      "detail": "V_us\u22480.225 predicted from Fritzsch texture",
+      "test": "JCAP 2027",
+      "status": "\ud83d\udfe1"
+    },
+    {
+      "name": "Proton decay: \u03c4(p\u2192e\u207a\u03c0\u2070)",
+      "detail": "\u03c4_p \u2248 10\u00b3\u2074-10\u00b3\u2076 yr (SO(10) minimal)",
+      "test": "Hyper-K 2030",
+      "status": "\ud83d\udd34"
+    },
+    {
+      "name": "Neutrino: normal hierarchy",
+      "detail": "126_H \u2192 see-saw \u2192 normal hierarchy predicted",
+      "test": "HK/JUNO 2028",
+      "status": "\ud83d\udfe1"
+    },
+    {
+      "name": "CMB: n_s - 1 correction",
+      "detail": "\u0394n_s \u2248 -0.000000 from OAS sync fluctuation",
+      "test": "CMB-S4 2030",
+      "status": "\ud83d\udd34"
+    },
+    {
+      "name": "CMB: r upper bound",
+      "detail": "r < 0.0890 from sync field tensor modes",
+      "test": "CMB-S4 2030",
+      "status": "\ud83d\udd34"
+    },
+    {
+      "name": "DESI: sync dip",
+      "detail": "n_eff(z) dip at z\u22480.5-1.0 from W_cosmo",
+      "test": "DESI DR2 2026",
+      "status": "\ud83d\udfe1"
+    },
+    {
+      "name": "Euclid: cosmic shear",
+      "detail": "S_8 tension resolved by sync field coupling",
+      "test": "Euclid 2027",
+      "status": "\ud83d\udfe1"
+    }
+  ]
+}

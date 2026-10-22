@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "phase": 3,
+    "workstream": "D2",
+    "title": "theta_QCD from OAS Zero Mode"
+  },
+  "mechanism": {
+    "theta_QCD": 0.0,
+    "zero_mode_orthogonal": true,
+    "axion_mass_estimate": "GUT-scale (not QCD axion)"
+  },
+  "residual": {
+    "formula": "epsilon^2 * C0 / (16*pi^2)^2",
+    "value": 0.0,
+    "bound": 1e-10,
+    "suppression_factor": 2488394889464.0,
+    "status": "PASS"
+  }
+}

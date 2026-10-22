@@ -1,0 +1,47 @@
+{
+  "verification_type": "ad-hoc_execution_test",
+  "timestamp": "2026-07-02T17:38:43.918509",
+  "scripts_run": 6,
+  "passed": 6,
+  "failed": 0,
+  "details": [
+    {
+      "script": "p3_mssm_thresholds.py",
+      "status": "PASS",
+      "output": "    \u274c NO (spread > 0.1)\n    GUT preferred:  SM direct\n    g_GUT:          0.6437\n    M_GUT:          10^19.00 GeV\n\n  \ud83d\udcbe Saved: /home/wsl/IDM-Domain-Framework/scripts/../figures/p3_mssm_thresholds.json\n"
+    },
+    {
+      "script": "q2_lambda_derivation.py",
+      "status": "PASS",
+      "output": "y 80%)\n\n  Best match: 10 = dim(10) of SU(5) \u2190 NATURAL\n  Second best: 10 \u2248 \u03c0\u00b2 (within 1.3%) \u2190 NUMERICAL\n\n  \ud83d\udcbe Saved: /home/wsl/IDM-Domain-Framework/scripts/../figures/q2_lambda_derivation.json\n\n  Done.\n"
+    },
+    {
+      "script": "kappa_contour_integral.py",
+      "status": "PASS",
+      "output": "mework/scripts/../figures/kappa_contour_integral.json\n\n  Verdict: kappa = (pi+e)/(2*pi+e) = 0.650991\n  Ad-hoc risk: \u274c ELIMINATED\n  The value is forced by directed Laplacian spectral topology.\n  Done.\n"
+    },
+    {
+      "script": "c0_residue_justification.py",
+      "status": "PASS",
+      "output": " angular factor from branch cut contour\n      \u251c\u2500\u2500 Half-circle contour: pi (not 2*pi)\n      \u2514\u2500\u2500 Full circle would give 2*pi \u2014 that would be double-counting\n  \u2192 Double-counting risk: ELIMINATED\n  Done.\n"
+    },
+    {
+      "script": "n44_continuity_anchor.py",
+      "status": "PASS",
+      "output": " is explicit (3.3 per-mille at N=44)\n  3. The invariants are N-independent (topological fixed points)\n\n\n  \ud83d\udcbe Saved: /home/wsl/IDM-Domain-Framework/scripts/../figures/n44_continuity_anchor.json\n  Done.\n"
+    },
+    {
+      "script": "q1_t9_formal_theorem.py",
+      "status": "PASS",
+      "output": "ous to\n  k>=4 routing cycles: they prevent sync stability.\n  Only k=3 (pure real spectrum) allows sync.\n\n  \ud83d\udcbe Saved: /home/wsl/IDM-Domain-Framework/scripts/../figures/q1_t9_formal_theorem.json\n  Done.\n"
+    }
+  ],
+  "output_files": {
+    "p3_mssm_thresholds.json": "/home/wsl/IDM-Domain-Framework/figures/p3_mssm_thresholds.json",
+    "q2_lambda_derivation.json": "/home/wsl/IDM-Domain-Framework/figures/q2_lambda_derivation.json",
+    "kappa_contour_integral.json": "/home/wsl/IDM-Domain-Framework/figures/kappa_contour_integral.json",
+    "c0_residue_justification.json": "/home/wsl/IDM-Domain-Framework/figures/c0_residue_justification.json",
+    "n44_continuity_anchor.json": "/home/wsl/IDM-Domain-Framework/figures/n44_continuity_anchor.json",
+    "q1_t9_formal_theorem.json": "/home/wsl/IDM-Domain-Framework/figures/q1_t9_formal_theorem.json"
+  }
+}

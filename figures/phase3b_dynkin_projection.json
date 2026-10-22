@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "phase": 3,
+    "workstream": "B",
+    "title": "Dynkin Projection \u2014 f_U(1) from D\u2085 Laplacian"
+  },
+  "d5_laplacian": {
+    "eigenvalues": [
+      0.152241,
+      1.234633,
+      2.0,
+      2.765367,
+      3.847759
+    ],
+    "eigenvectors": [
+      [
+        0.2706,
+        0.5,
+        0.6533,
+        0.3536,
+        0.3536
+      ],
+      [
+        0.6533,
+        0.5,
+        -0.2706,
+        -0.3536,
+        -0.3536
+      ],
+      [
+        0.0,
+        0.0,
+        -0.0,
+        0.7071,
+        -0.7071
+      ],
+      [
+        0.6533,
+        -0.5,
+        -0.2706,
+        0.3536,
+        0.3536
+      ],
+      [
+        -0.2706,
+        0.5,
+        -0.6533,
+        0.3536,
+        0.3536
+      ]
+    ]
+  },
+  "projection_coefficients": {
+    "f_U1": 0.7926,
+    "f_SU3": 0.1274,
+    "f_SU2": 0.08,
+    "chi_weight": 0.2221,
+    "U1_Y_total": 2.1992,
+    "SU3_weight": 0.3535,
+    "SU2_weight": 0.2221
+  },
+  "gravitational_threshold": {
+    "g1_old": 0.57,
+    "g2_old": 0.713,
+    "g3_old": 0.71,
+    "g1_net": 0.71,
+    "spread_old": 0.143,
+    "ad_hoc_tuning_eliminated": true,
+    "verdict": "f_U(1) = 0.7926 from D\u2085 Dynkin projection \u2014 excess dissipated by SO(10) Higgs sector"
+  }
+}

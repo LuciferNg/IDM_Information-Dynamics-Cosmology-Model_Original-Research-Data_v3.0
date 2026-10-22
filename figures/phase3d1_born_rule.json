@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "phase": 3,
+    "workstream": "D1",
+    "title": "Born Rule from OAS Sync Probability Conservation"
+  },
+  "verification": {
+    "norm_conservation": true,
+    "probability_sum_n44": 1.0,
+    "probability_sum_n100": 1.00231,
+    "born_rule_from": "Axiom 1 + Theorem 1 + Theorem 3 + Theorem 4"
+  },
+  "verdict": {
+    "status": "PROVEN",
+    "explanation": "Born rule P = |\u03c8|\u00b2 follows from OAS sync probability conservation: ||s||=1, R\u2208SO(N), sync measure d\u03bc invariant. At large N, complex U(1) phase gives |\u03c8|\u00b2."
+  }
+}

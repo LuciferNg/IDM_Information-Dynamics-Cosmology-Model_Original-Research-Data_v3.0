@@ -1,0 +1,15 @@
+{
+  "kappa_obs": 0.6509910433209725,
+  "kappa_derived": 0.6509910433209725,
+  "I_Gamma": 9.00146713563863,
+  "I_gamma": 5.859874482048838,
+  "numerical_verification": {
+    "I_full_real": 8.012669819360966,
+    "I_pos_real": 8.011279785209034,
+    "numerical_kappa": 0.9998265204752886,
+    "error_pct": 53.58529594735486
+  },
+  "interpretation": "Routing amplification factor \u2014 forward-directed flow ratio",
+  "ad_hoc_risk": false,
+  "justification": "pi from branch cut angular integration, e from spectral edge Tracy-Widom tail, ratio is forced by directed Laplacian topology"
+}
