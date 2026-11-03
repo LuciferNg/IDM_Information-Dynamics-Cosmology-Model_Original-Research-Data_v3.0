@@ -27,3 +27,7 @@ Thumbs.db
 *.fits.gz
 *.parquet
 *.deb
+
+# ── Comparisons/ 第三方 repo（上游作者所有，唔上傳）──
+# 本專案只保留 Comparisons/IDM_vs_Parallel_Research*.md 與 numerical_comparison.py
+Comparisons/*/
